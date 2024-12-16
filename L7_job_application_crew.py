@@ -37,7 +37,20 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-os.environ["OPENAI_MODEL_NAME"] = 'gpt-3.5-turbo'
+# Change this section to use Google's API
+import google.generativeai as genai
+from langchain_google_genai import ChatGoogleGenerativeAI
+
+# Configure Google API
+os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
+genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
+
+# Set up the Google model
+llm = ChatGoogleGenerativeAI(
+    model="gemini-1.5-flash",
+    google_api_key=os.environ["GOOGLE_API_KEY"],
+    temperature=0.7
+)
 
 # ## crewAI Tools
 
@@ -53,8 +66,8 @@ from crewai_tools import (
 
 search_tool = SerperDevTool()
 scrape_tool = ScrapeWebsiteTool()
-read_resume = FileReadTool(file_path='./fake_resume.md')
-semantic_search_resume = MDXSearchTool(mdx='./fake_resume.md')
+read_resume = FileReadTool(file_path='./original_resume.md')
+semantic_search_resume = MDXSearchTool(mdx='./original_resume.md')
 
 
 # - Uncomment and run the cell below if you wish to view `fake_resume.md` in the notebook.
@@ -78,6 +91,7 @@ researcher = Agent(
          "job posting to help job applicants",
     tools = [scrape_tool, search_tool],
     verbose=True,
+    llm=llm,
     backstory=(
         "As a Job Researcher, your prowess in "
         "navigating and extracting critical "
@@ -101,6 +115,7 @@ profiler = Agent(
     tools = [scrape_tool, search_tool,
              read_resume, semantic_search_resume],
     verbose=True,
+    llm=llm,
     backstory=(
         "Equipped with analytical prowess, you dissect "
         "and synthesize information "
@@ -122,6 +137,7 @@ resume_strategist = Agent(
     tools = [scrape_tool, search_tool,
              read_resume, semantic_search_resume],
     verbose=True,
+    llm=llm,
     backstory=(
         "With a strategic mind and an eye for detail, you "
         "excel at refining resumes to highlight the most "
@@ -142,6 +158,7 @@ interview_preparer = Agent(
     tools = [scrape_tool, search_tool,
              read_resume, semantic_search_resume],
     verbose=True,
+    llm=llm,
     backstory=(
         "Your role is crucial in anticipating the dynamics of "
         "interviews. With your ability to formulate key questions "
