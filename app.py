@@ -198,7 +198,7 @@ research_task = Task(
 profile_task = Task(
     description=(
         "Compile a detailed personal and professional profile "
-        "using the GitHub ({github_url}) URLs, and personal write-up "
+        "using the GitHub ({github_url}) URLs, linkedin profile ({linkedin_url}) , and personal write-up "
         "({personal_writeup}). Utilize tools to extract and "
         "synthesize information from these sources."
     ),
@@ -292,16 +292,13 @@ job_application_crew = Crew(
 
 
 job_application_inputs = {
-    'job_posting_url': 'https://jobs.lever.co/AIFund/6c82e23e-d954-4dd8-a734-c0c2c5ee00f1?lever-origin=applied&lever-source%5B%5D=AI+Fund',
-    'github_url': 'https://github.com/joaomdmoura',
-    'personal_writeup': """Noah is an accomplished Software
-    Engineering Leader with 18 years of experience, specializing in
-    managing remote and in-office teams, and expert in multiple
-    programming languages and frameworks. He holds an MBA and a strong
-    background in AI and data science. Noah has successfully led
-    major tech initiatives and startups, proving his ability to drive
-    innovation and growth in the tech industry. Ideal for leadership
-    roles that require a strategic and innovative approach."""
+    'job_posting_url': 'https://addy1.snaphunt.com/job/Q9RCVW3LU0-AR-8?source=linkedin',
+    'github_url': 'https://github.com/igzanotto',
+    'linkedin_url': 'https://www.linkedin.com/in/igzanotto',
+    'personal_writeup': """Apasionado por crear y liderar el desarrollo de 
+    productos tecnológicos, transformando ideas complejas en soluciones efectivas. 
+    Con experiencia en la integración de inteligencia artificial y liderazgo técnico,
+    busco innovar continuamente en el campo de la tecnología y la IA."""
 }
 
 
