@@ -1,4 +1,3 @@
-
 # Warning control
 import warnings
 warnings.filterwarnings('ignore')
@@ -36,10 +35,11 @@ from crewai_tools import (
   MDXSearchTool,
 )
 
-read = FileReadTool(file_path='./original_resume.md')
-semantic_search = MDXSearchTool(mdx='./original_resume.md')
+read_resume = FileReadTool(file_path='./original_resume.md')
+read_job_posting = FileReadTool(file_path='./job_posting.md')
 
-
+semantic_search_resume = MDXSearchTool(mdx='./original_resume.md')
+semantic_search_job_posting = MDXSearchTool(mdx='./job_posting.md')
 # ## Creating Agents
 
 
@@ -48,7 +48,7 @@ researcher = Agent(
     role="Tech Job Researcher",
     goal="Make sure to do amazing analysis on "
          "job posting to help job applicants",
-    tools = [read, semantic_search],
+    tools = [read_job_posting, semantic_search_job_posting],
     verbose=True,
     llm=llm,
     backstory=(
@@ -68,7 +68,7 @@ profiler = Agent(
     role="Personal Profiler for Engineers",
     goal="Do increditble research on job applicants "
          "to help them stand out in the job market",
-    tools = [read, semantic_search],
+    tools = [read_resume, semantic_search_resume],
     verbose=True,
     llm=llm,
     backstory=(
@@ -88,7 +88,7 @@ resume_strategist = Agent(
     role="Resume Strategist for Engineers",
     goal="Find all the best ways to make a "
          "resume stand out in the job market.",
-    tools = [read, semantic_search],
+    tools = [read_resume, semantic_search_resume],
     verbose=True,
     llm=llm,
     backstory=(
@@ -106,7 +106,7 @@ interview_preparer = Agent(
     role="Engineering Interview Preparer",
     goal="Create interview questions and talking points "
          "based on the resume and job requirements",
-    tools = [read, semantic_search],
+    tools = [read_resume, semantic_search_resume],
     verbose=True,
     llm=llm,
     backstory=(
@@ -125,7 +125,7 @@ interview_preparer = Agent(
 # Task for Researcher Agent: Extract Job Requirements
 research_task = Task(
     description=(
-        "Analyze the job posting URL provided ({job_posting_url}) "
+        "Analyze the job posting provided"
         "to extract key skills, experiences, and qualifications "
         "required. Use the tools to gather content and identify "
         "and categorize the requirements."
@@ -143,7 +143,7 @@ research_task = Task(
 profile_task = Task(
     description=(
         "Compile a detailed personal and professional profile "
-        "using the GitHub ({github_url}) URLs, linkedin profile ({linkedin_url}) , and personal write-up "
+        "using the information provided in the resume and personal write-up "
         "({personal_writeup}). Utilize tools to extract and "
         "synthesize information from these sources."
     ),
@@ -225,9 +225,6 @@ job_application_crew = Crew(
 # - Set the inputs for the execution of the crew.
 
 job_application_inputs = {
-    'job_posting_url': 'https://addy1.snaphunt.com/job/Q9RCVW3LU0-AR-8?source=linkedin',
-    'github_url': 'https://github.com/igzanotto',
-    'linkedin_url': 'https://www.linkedin.com/in/igzanotto',
     'personal_writeup': """Apasionado por crear y liderar el desarrollo de 
     productos tecnológicos, transformando ideas complejas en soluciones efectivas. 
     Con experiencia en la integración de inteligencia artificial y liderazgo técnico,
