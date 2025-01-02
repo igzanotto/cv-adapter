@@ -1,14 +1,12 @@
-# Resume
 
-## Personal Information
-- **Name**: Ignacio Zanotto
-- **Location**: Ciudad de México, México
-- **Contact Information**: ignaciozanotto@gmail.com | [Your Phone Number] | [LinkedIn](https://www.linkedin.com/in/igzt)
+
+## Ignacio Zanotto
+- **Contact Information**: ignaciozanotto@gmail.com
 
 ---
 
-## Professional Summary
-Apasionado por crear y liderar el desarrollo de productos tecnológicos, transformando ideas complejas en soluciones efectivas. Con experiencia en la integración de inteligencia artificial y liderazgo técnico, busco innovar continuamente en el campo de la tecnología y la IA.
+## Summary
+Apasionado por liderar equipos y desarrollar productos tecnológicos que transforman ideas en soluciones efectivas. Experto en integración de inteligencia artificial y automatización de procesos, con un historial comprobado de impacto en startups tecnológicas y plataformas digitales. Busco seguir innovando en el campo de la inteligencia artificial y el desarrollo de software.
 
 ---
 
@@ -18,8 +16,9 @@ Apasionado por crear y liderar el desarrollo de productos tecnológicos, transfo
 **Role**: CTO & Cofounder  
 **Dates**: Mayo 2024 - Actualidad  
 **Achievements**:
-- Lideré la creación de una plataforma de control financiero para PYMEs.
-- Implementé modelos de lenguaje (LLMs) para la clasificación de movimientos bancarios y generación de informes financieros automatizados.
+- Diseñé y lideré el desarrollo de una plataforma de gestión financiera para PYMEs.
+- Implementé tecnología de Retrieval-Augmented Generation (RAG) y modelos de lenguaje (LLMs) para la clasificación de transacciones bancarias y generación automatizada de informes financieros.
+- Mejoré la precisión en el procesamiento de datos financieros, optimizando tiempos y recursos.
 
 ---
 
@@ -27,8 +26,8 @@ Apasionado por crear y liderar el desarrollo de productos tecnológicos, transfo
 **Role**: Chief Product Officer  
 **Dates**: Enero 2024 - Junio 2024  
 **Achievements**:
-- Integré funcionalidades clave del sistema de "Tu Mejor Amigo" en la web app Next.js.
-- Automatizé procesos administrativos, logrando ahorros significativos en tiempo y recursos.
+- Integramos el sistema de "Tu Mejor Amigo" en una web app construida con Next.js.
+- Automatizamos procesos administrativos clave, reduciendo significativamente el esfuerzo manual y mejorando la eficiencia operativa.
 
 ---
 
@@ -45,7 +44,8 @@ Apasionado por crear y liderar el desarrollo de productos tecnológicos, transfo
 **Role**: Full-stack Teacher  
 **Dates**: Agosto 2022 - Actualidad  
 **Achievements**:
-- Enseño desarrollo full-stack, ayudando a estudiantes a dominar Ruby on Rails y construir aplicaciones escalables.
+- Formé a estudiantes en desarrollo full-stack, con foco en Ruby on Rails y aplicaciones escalables.
+- Mentoreé a futuros desarrolladores para lanzar proyectos completos en tiempo récord.
 
 ---
 
@@ -53,7 +53,7 @@ Apasionado por crear y liderar el desarrollo de productos tecnológicos, transfo
 - **Languages**: Python, JavaScript, Ruby
 - **Frameworks & Libraries**: React Native, Next.js, Flask, Ruby on Rails
 - **Tools**: Docker, GCP, Git
-- **Other**: Scrum, Kanban, Integración de IA (LLMs), Optimización de Procesos
+- **Other**: Scrum, Kanban, LLMs (integración e implementación), Automatización de Procesos, RAG
 
 ---
 
@@ -63,6 +63,7 @@ Apasionado por crear y liderar el desarrollo de productos tecnológicos, transfo
 **Year of Graduation**: 2016
 
 Certificaciones:
+- Stanford - Especialización en Machine Learning 
 - Harvard CS50 - Introducción a Ciencias de la Computación
 - Le Wagon - Full-stack web development
 - Universidad Carlos III de Madrid - Macroeconomía
@@ -74,6 +75,5 @@ Desarrollarme en el campo de la inteligencia artificial, aprovechando mi experie
 
 ---
 
-## Additional Information
 - **Languages**: Español (Nativo), Inglés (Fluido), Portugues (FLuido)
-- **Availability**: Abierto a oportunidades remotas o presenciales, dispuesto a relocalizarme.
+

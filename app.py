@@ -1,16 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# # L7: Build a Crew to Tailor Job Applications
-# 
-# In this lesson, you will built your first multi-agent system.
-
-# The libraries are already installed in the classroom. If you're running this notebook on your own machine, you can install the following:
-# ```Python
-# !pip install crewai==0.28.8 crewai_tools==0.1.6 langchain_community==0.0.29
-# ```
-
-# In[ ]:
 
 # Warning control
 import warnings
@@ -19,19 +6,8 @@ warnings.filterwarnings('ignore')
 
 # - Import libraries, APIs and LLM
 
-# In[ ]:
-
 
 from crewai import Agent, Task, Crew
-
-
-# **Note**: 
-# - The video uses `gpt-4-turbo`, but due to certain constraints, and in order to offer this course for free to everyone, the code you'll run here will use `gpt-3.5-turbo`.
-# - You can use `gpt-4-turbo` when you run the notebook _locally_ (using `gpt-4-turbo` will not work on the platform)
-# - Thank you for your understanding!
-
-# In[ ]:
-
 
 import os
 from dotenv import load_dotenv
@@ -54,34 +30,17 @@ llm = ChatGoogleGenerativeAI(
 
 # ## crewAI Tools
 
-# In[ ]:
-
 
 from crewai_tools import (
   FileReadTool,
-  ScrapeWebsiteTool,
   MDXSearchTool,
-  SerperDevTool
 )
 
-search_tool = SerperDevTool()
-scrape_tool = ScrapeWebsiteTool()
-read_resume = FileReadTool(file_path='./original_resume.md')
-semantic_search_resume = MDXSearchTool(mdx='./original_resume.md')
-
-
-# - Uncomment and run the cell below if you wish to view `fake_resume.md` in the notebook.
-
-# In[ ]:
-
-
-# from IPython.display import Markdown, display
-# display(Markdown("./fake_resume.md"))
+read = FileReadTool(file_path='./original_resume.md')
+semantic_search = MDXSearchTool(mdx='./original_resume.md')
 
 
 # ## Creating Agents
-
-# In[ ]:
 
 
 # Agent 1: Researcher
@@ -89,7 +48,7 @@ researcher = Agent(
     role="Tech Job Researcher",
     goal="Make sure to do amazing analysis on "
          "job posting to help job applicants",
-    tools = [scrape_tool, search_tool],
+    tools = [read, semantic_search],
     verbose=True,
     llm=llm,
     backstory=(
@@ -104,16 +63,12 @@ researcher = Agent(
 )
 
 
-# In[ ]:
-
-
 # Agent 2: Profiler
 profiler = Agent(
     role="Personal Profiler for Engineers",
     goal="Do increditble research on job applicants "
          "to help them stand out in the job market",
-    tools = [scrape_tool, search_tool,
-             read_resume, semantic_search_resume],
+    tools = [read, semantic_search],
     verbose=True,
     llm=llm,
     backstory=(
@@ -126,7 +81,6 @@ profiler = Agent(
 )
 
 
-# In[ ]:
 
 
 # Agent 3: Resume Strategist
@@ -134,8 +88,7 @@ resume_strategist = Agent(
     role="Resume Strategist for Engineers",
     goal="Find all the best ways to make a "
          "resume stand out in the job market.",
-    tools = [scrape_tool, search_tool,
-             read_resume, semantic_search_resume],
+    tools = [read, semantic_search],
     verbose=True,
     llm=llm,
     backstory=(
@@ -147,16 +100,13 @@ resume_strategist = Agent(
 )
 
 
-# In[ ]:
-
 
 # Agent 4: Interview Preparer
 interview_preparer = Agent(
     role="Engineering Interview Preparer",
     goal="Create interview questions and talking points "
          "based on the resume and job requirements",
-    tools = [scrape_tool, search_tool,
-             read_resume, semantic_search_resume],
+    tools = [read, semantic_search],
     verbose=True,
     llm=llm,
     backstory=(
@@ -170,8 +120,6 @@ interview_preparer = Agent(
 
 
 # ## Creating Tasks
-
-# In[ ]:
 
 
 # Task for Researcher Agent: Extract Job Requirements
@@ -189,9 +137,6 @@ research_task = Task(
     agent=researcher,
     async_execution=True
 )
-
-
-# In[ ]:
 
 
 # Task for Profiler Agent: Compile Comprehensive Profile
@@ -216,8 +161,6 @@ profile_task = Task(
 # - The task then takes into account the output of those tasks in its execution.
 # - The task will not run until it has the output(s) from those tasks.
 
-# In[ ]:
-
 
 # Task for Resume Strategist Agent: Align Resume with Job Requirements
 resume_strategy_task = Task(
@@ -241,9 +184,6 @@ resume_strategy_task = Task(
 )
 
 
-# In[ ]:
-
-
 # Task for Interview Preparer Agent: Develop Interview Materials
 interview_preparation_task = Task(
     description=(
@@ -265,10 +205,6 @@ interview_preparation_task = Task(
 
 
 # ## Creating the Crew
-
-# In[ ]:
-
-
 job_application_crew = Crew(
     agents=[researcher,
             profiler,
@@ -288,9 +224,6 @@ job_application_crew = Crew(
 # 
 # - Set the inputs for the execution of the crew.
 
-# In[ ]:
-
-
 job_application_inputs = {
     'job_posting_url': 'https://addy1.snaphunt.com/job/Q9RCVW3LU0-AR-8?source=linkedin',
     'github_url': 'https://github.com/igzanotto',
@@ -304,48 +237,6 @@ job_application_inputs = {
 
 # **Note**: LLMs can provide different outputs for they same input, so what you get might be different than what you see in the video.
 
-# In[ ]:
 
-
-### this execution will take a few minutes to run
 result = job_application_crew.kickoff(inputs=job_application_inputs)
-
-
-# - Dislplay the generated `tailored_resume.md` file.
-
-# In[ ]:
-
-
-from IPython.display import Markdown, display
-display(Markdown("./tailored_resume.md"))
-
-
-# - Dislplay the generated `interview_materials.md` file.
-
-# In[ ]:
-
-
-display(Markdown("./interview_materials.md"))
-
-
-# # CONGRATULATIONS!!!
-# 
-# ## Share your accomplishment!
-# - Once you finish watching all the videos, you will see the "In progress" image on the bottom left turn into "Accomplished".
-# - Click on "Accomplished" to view the course completion page with your name on it.
-# - Take a screenshot and share on LinkedIn, X (Twitter), or Facebook.  
-# - **Tag @Joāo (Joe) Moura, @crewAI, and @DeepLearning.AI, (and a few of your friends if you'd like them to try out the course)**
-# - **Joāo and DeepLearning.AI will "like"/reshare/comment on your post!**
-# 
-# ## Get a completion badge that you can add to your LinkedIn profile!
-# - Go to [learn.crewai.com](https://learn.crewai.com).
-# - Upload your screenshot of your course completion page.
-# - You'll get a badge from CrewAI that you can share!
-# 
-# (Joāo will also talk about this in the last video of the course.)
-
-# In[ ]:
-
-
-
 
