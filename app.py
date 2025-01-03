@@ -143,9 +143,8 @@ research_task = Task(
 profile_task = Task(
     description=(
         "Compile a detailed personal and professional profile "
-        "using the information provided in the resume and personal write-up "
-        "({personal_writeup}). Utilize tools to extract and "
-        "synthesize information from these sources."
+        "using the information provided in the resume. Utilize tools to extract and "
+        "expand the information."
     ),
     expected_output=(
         "A comprehensive profile document that includes skills, "
@@ -222,18 +221,11 @@ job_application_crew = Crew(
 
 # ## Running the Crew
 # 
-# - Set the inputs for the execution of the crew.
 
-job_application_inputs = {
-    'personal_writeup': """Apasionado por crear y liderar el desarrollo de 
-    productos tecnológicos, transformando ideas complejas en soluciones efectivas. 
-    Con experiencia en la integración de inteligencia artificial y liderazgo técnico,
-    busco innovar continuamente en el campo de la tecnología y la IA."""
-}
 
 
 # **Note**: LLMs can provide different outputs for they same input, so what you get might be different than what you see in the video.
 
 
-result = job_application_crew.kickoff(inputs=job_application_inputs)
+result = job_application_crew.kickoff()
 
