@@ -49,6 +49,18 @@ Apasionado por liderar equipos y desarrollar productos tecnológicos que transfo
 
 ---
 
+
+**Escribano Público (2013 - 2020)**
+*Escribano y Líder de Proyectos Inmobiliarios*
+
+* Gestioné operaciones inmobiliarias de alta complejidad, incluyendo proyectos valuados en millones de dólares.
+* Supervisé contratos, escrituraciones y negociaciones, garantizando la seguridad jurídica de las transacciones.
+* Coordiné equipos multidisciplinarios para la ejecución de proyectos, manteniendo altos estándares de precisión y cumplimiento legal.
+
+---
+
+
+
 ## Skills
 - **Languages**: Python, JavaScript, Ruby
 - **Frameworks & Libraries**: React Native, Next.js, Flask, Ruby on Rails

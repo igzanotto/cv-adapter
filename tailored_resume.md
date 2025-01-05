@@ -8,28 +8,36 @@ Results-oriented and passionate technology leader with 5+ years of experience bu
 
 **Experience**
 
-**Tualo (May 2024 � Present)**
+**Tualo (May 2024 – Present)**
 *CTO & Co-founder*
 
 * Led the design and development of a financial management platform for SMEs, implementing Retrieval-Augmented Generation (RAG) and Large Language Models (LLMs) to automate financial report generation and improve the accuracy of bank transaction classification.  This resulted in a significant improvement in the accuracy of financial data processing, optimizing time and resources.
 * Successfully implemented and integrated LLMs resulting in improved accuracy and efficiency.
 
 
-**CuidaMiMascota (January 2024 � June 2024)**
+**CuidaMiMascota (January 2024 – June 2024)**
 *Chief Product Officer*
 
 * Integrated the "Tu Mejor Amigo" system into a Next.js web application, automating key administrative processes and significantly reducing manual effort. This resulted in improved operational efficiency and reduced operational costs.
 * Successfully integrated existing systems into a new web application framework.
 
 
-**Tu Mejor Amigo (September 2022 � February 2024)**
+**Tu Mejor Amigo (September 2022 – February 2024)**
 *CTO & Co-founder*
 
 * Developed a pet services marketplace using Ruby on Rails, generating 200 monthly transactions.
 * Developed a React Native mobile application for pet walkers, enabling agenda management and real-time location tracking.
 
 
-**Le Wagon (August 2022 � Present)**
+**Escribano Público (2013 - 2020)**
+*Escribano y Líder de Proyectos Inmobiliarios*
+
+* Gestioné operaciones inmobiliarias de alta complejidad, incluyendo proyectos valuados en millones de dólares.
+* Supervisé contratos, escrituraciones y negociaciones, garantizando la seguridad jurídica de las transacciones.
+* Coordiné equipos multidisciplinarios para la ejecución de proyectos, manteniendo altos estándares de precisión y cumplimiento legal.
+
+
+**Le Wagon (August 2022 – Present)**
 *Full-stack Teacher*
 
 * Trained students in full-stack development, focusing on Ruby on Rails and scalable applications.  Mentored aspiring developers, successfully guiding them through the development and launch of multiple projects.
