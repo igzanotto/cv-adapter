@@ -29,11 +29,11 @@ Profesional con amplia experiencia en el liderazgo de productos tecnológicos y 
 **Teacher**  
 - Dicto clases de desarrollo web full-stack.
 
-### **Escribania Zanotto (2013 - 2020)**  
-**Notario Publico**  
-- Manejé una oficina con 5 personas que llegó a firmar 100 escrituras mensuales.  
+### **Escribanía Zanotto (2013 - 2020)**  
+**Notario Público**  
+- Dirigí una oficina con 5 personas que llegó a firmar 100 escrituras mensuales.  
 - Tuve trato con numerosos clientes de alto perfil.  
-- Formalicé la documentación de un parque industrial y un desarrollo urbanístico valuados en millones de dólares, actuando como punto de contacto con equipos legales, técnicos y comerciales; participé en reuniones con el intendente de la ciudad del parque y empresas relevantes como Colcar y Tromen.
+- Manejé la documentación de un parque industrial, actuando como punto de contacto con equipos legales, técnicos y comerciales; participé en reuniones con el intendente de la ciudad del parque y empresas relevantes como Colcar y Tromen.
 
 ---
 
